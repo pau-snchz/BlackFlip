@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ml36aqxmnmia"]
+
+[ext_resource type="Script" uid="uid://cpmh2gqhql01" path="res://Scenes/Card.gd" id="1_3p273"]
+[ext_resource type="Texture2D" uid="uid://drj2uuyug6acs" path="res://Assets/Back.png" id="1_pnb5n"]
+
+[node name="Card" type="Control"]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3p273")
+
+[node name="CardSprite" type="TextureRect" parent="."]
+layout_mode = 0
+scale = Vector2(0.052125, 0.052125)
+texture = ExtResource("1_pnb5n")
+stretch_mode = 5

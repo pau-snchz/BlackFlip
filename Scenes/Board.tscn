@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://blglsokuha5fe"]
+
+[ext_resource type="Script" uid="uid://dygat01raui47" path="res://Scenes/Board.gd" id="1_igt3p"]
+[ext_resource type="Texture2D" uid="uid://drj2uuyug6acs" path="res://Assets/Back.png" id="1_ml4tp"]
+
+[node name="Board" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_igt3p")
+
+[node name="DeckSprite" type="Sprite2D" parent="."]
+position = Vector2(556, 327)
+scale = Vector2(0.066, 0.066)
+texture = ExtResource("1_ml4tp")
+
+[node name="DrawButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 724.0
+offset_top = 314.0
+offset_right = 780.0
+offset_bottom = 345.0
+text = "Draw"
+
+[node name="FlipButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 791.0
+offset_top = 314.0
+offset_right = 848.0
+offset_bottom = 345.0
+text = "Flip"
+
+[node name="HandContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 467.0
+offset_right = 825.0
+offset_bottom = 595.0
+
+[node name="TotalValueLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 734.0
+offset_top = 205.0
+offset_right = 1047.0
+offset_bottom = 239.0
+text = "Total Value:"
+
+[connection signal="ready" from="." to="." method="_ready"]
+[connection signal="pressed" from="DrawButton" to="." method="_on_draw_pressed"]
+[connection signal="pressed" from="FlipButton" to="." method="_on_flip_pressed"]

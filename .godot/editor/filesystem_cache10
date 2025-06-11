@@ -1,6 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1749148760
+::res://::1749610388
 icon.svg::CompressedTexture2D/CompressedTexture2D::2765094835560085484::1749119954::1749119973::1::::<><><>0<>0<>5effb4b34b0f844f4dd100a9c6d4ec51<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+README.md::TextFile/TextFile::-1::1749149214::0::1::::<><><>0<>0<><>::
 ::res://Assets/::1749136925
 Back.png::CompressedTexture2D/CompressedTexture2D::8372727955855437998::1749132564::1749136925::1::::<><><>0<>0<>304a8d5e6e17b26af90cfb45fc828395<>res://.godot/imported/Back.png-003873f212769b19c5e04973e4aaf959.ctex::
 Card 0.png::CompressedTexture2D/CompressedTexture2D::347914503268045572::1749132564::1749136925::1::::<><><>0<>0<>525f443ec79c2ac00af384b224f24830<>res://.godot/imported/Card 0.png-ba607ff99b98eb92f6c7f0b436f2c211.ctex::
@@ -14,9 +15,9 @@ Card 7.png::CompressedTexture2D/CompressedTexture2D::1975514051076804397::174913
 Card 8.png::CompressedTexture2D/CompressedTexture2D::1334352269661024237::1749132564::1749136925::1::::<><><>0<>0<>7463e476177b69d6dc43c5761cad452a<>res://.godot/imported/Card 8.png-053d0dd4b55ff8c1848eef5357f89594.ctex::
 Card 9.png::CompressedTexture2D/CompressedTexture2D::8474058416642808327::1749132564::1749136925::1::::<><><>0<>0<>7ff859c7e8ba4b9bdb0a757ded45c410<>res://.godot/imported/Card 9.png-0f5420ce690c54c2aa6e30a74d7c97b9.ctex::
 Card 10.png::CompressedTexture2D/CompressedTexture2D::7511260770300475193::1749132564::1749136925::1::::<><><>0<>0<>4dd46fe865cb8b6295bf76aca793087a<>res://.godot/imported/Card 10.png-aafc28aa9060789430a829f6c556bdc6.ctex::
-::res://Scenes/::1749148700
-Board.gd::GDScript::8856215849022499034::1749147827::0::1::::<>Control<><>0<>0<><>::
-Board.tscn::PackedScene::3171585013139579030::1749148700::0::1::::<><><>0<>0<><>::uid://dygat01raui47::::res://Scenes/Board.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png
+::res://Scenes/::1749610365
+Board.gd::GDScript::8856215849022499034::1749610357::0::1::::<>Control<><>0<>0<><>::
+Board.tscn::PackedScene::3171585013139579030::1749610365::0::1::::<><><>0<>0<><>::uid://dygat01raui47::::res://Scenes/Board.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png
 Card.gd::GDScript/GDScript::172085886193737224::1749147153::0::1::::<>Control<><>0<>0<><>::
-Card.tscn::PackedScene::866729740138005448::1749148433::0::1::::<><><>0<>0<><>::uid://cpmh2gqhql01::::res://Scenes/Card.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png
+Card.tscn::PackedScene::866729740138005448::1749608589::0::1::::<><><>0<>0<><>::uid://cpmh2gqhql01::::res://Scenes/Card.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png
 ::res://Scripts/::1749139116

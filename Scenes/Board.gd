@@ -3,11 +3,15 @@ extends Control
 @onready var hand_container = $HandContainer
 @onready var draw_button = $DrawButton
 @onready var flip_button = $FlipButton
+@onready var stay_button = $StayButton
 @onready var total_value_label = $TotalValueLabel
+@onready var round_score_label = $RoundScoreLabel
+@onready var total_score_label = $TotalScoreLabel
+@onready var deck_count_label = $DeckCountLabel
+@onready var status_label = $StatusLabel
 
 var card_scene = preload("res://Scenes/Card.tscn")
-var BACK_IMAGE = preload("res://Assets/Back.png")
-
+var back_image = preload("res://Assets/Back.png")
 var card_deck_data = [
 	{"value": 0, "texture": preload("res://Assets/Card 0.png"), "count": 1},
 	{"value": 1, "texture": preload("res://Assets/Card 1.png"), "count": 1},
@@ -26,9 +30,21 @@ var deck = []
 var hand_cards = []
 var flip_index = 0
 var total_flipped_value = 0
+var total_score = 0
+var flipped_values = []
 
 func _ready():
 	flip_button.visible = false
+	stay_button.visible = false
+	status_label.text = ""
+	round_score_label.text = "Round Score: 0"
+	total_score_label.text = "Total Score: 0"
+	deck = build_deck()
+	deck.shuffle()
+	update_deck_label()
+
+func update_deck_label():
+	deck_count_label.text = "Deck Left: %d" % deck.size()
 
 func build_deck():
 	var new_deck = []
@@ -38,20 +54,33 @@ func build_deck():
 	return new_deck
 
 func _on_draw_pressed():
+	# Return unflipped cards to deck
+	for card in hand_cards:
+		if not card.is_flipped:
+			deck.append({
+				"value": card.card_value,
+				"texture": card.front_texture,
+				"count": 1
+			})
+	deck.shuffle()
+
 	# Clear old hand
 	for child in hand_container.get_children():
 		child.queue_free()
 	hand_cards.clear()
 	flip_index = 0
 	total_flipped_value = 0
+	flipped_values.clear()
 	flip_button.visible = false
 
 	# Reset UI label
 	total_value_label.text = "Total Value: 0"
 
-	# Build and shuffle deck
-	deck = build_deck()
-	deck.shuffle()
+	# Check if deck is empty — rebuild if needed
+	if deck.is_empty():
+		deck = build_deck()
+		deck.shuffle()
+		print("Deck was empty. Rebuilding full deck...")
 
 	# Draw 5 cards
 	var draw_count = min(5, deck.size())
@@ -59,23 +88,53 @@ func _on_draw_pressed():
 		var card_info = deck.pop_back()
 		var card = card_scene.instantiate()
 		card.front_texture = card_info["texture"]
-		card.back_texture = BACK_IMAGE
+		card.back_texture = back_image
 		card.card_value = card_info["value"]
 		hand_container.add_child(card)
 		hand_cards.append(card)
 
 	if draw_count > 0:
 		flip_button.visible = true
+		stay_button.visible = true
+		
+	update_deck_label()
+
 
 func _on_flip_pressed():
 	if flip_index < hand_cards.size():
 		var card = hand_cards[flip_index]
 		card.flip()
-		total_flipped_value += card.card_value
-		flip_index += 1
-		print("Total flipped value:", total_flipped_value)
 
-		# Update label text
-		total_value_label.text = "Total Value: %d" % total_flipped_value
+		# Check for bust (duplicate value)
+		if card.card_value in flipped_values:
+			status_label.text = "💥 You Busted!"
+			total_flipped_value = 0
+			flip_button.visible = false
+			stay_button.visible = false
+			flip_index = hand_cards.size()  # Stop further flipping
+			round_score_label.text = "Round Score: 0"
+		else:
+			flipped_values.append(card.card_value)
+			total_flipped_value += card.card_value
+			round_score_label.text = "Round Score: %d" % total_flipped_value
+			total_value_label.text = "Total Value: %d" % total_flipped_value
+			flip_index += 1
+
+		update_deck_label()
+
+		if flip_index == hand_cards.size():
+			flip_button.visible = false
+			stay_button.visible = false
 	else:
 		flip_button.visible = false
+		stay_button.visible = false
+
+func _on_stay_pressed():
+	total_score += total_flipped_value
+	total_score_label.text = "Total Score: %d" % total_score
+	status_label.text = "Round Complete! Press Draw to continue."
+	flip_button.visible = false
+	stay_button.visible = false
+
+	if total_score >= 200:
+		status_label.text = "🎉 You Won!"

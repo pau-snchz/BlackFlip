@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3 uid="uid://bpmu0qt2545lh"]
+
+[ext_resource type="Texture2D" uid="uid://dpww3rxgslah2" path="res://Assets/Play-N.png" id="1_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://clbf6s5sdq2ug" path="res://Assets/Bg.png" id="1_cp0ys"]
+[ext_resource type="Script" uid="uid://bys7sto2rnc07" path="res://Scenes/main_menu.gd" id="1_vr1f0"]
+[ext_resource type="Texture2D" uid="uid://b1fei2enpw4mi" path="res://Assets/Play-P.png" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://chxcfjc3gkruh" path="res://Assets/Play-H.png" id="3_n45e2"]
+[ext_resource type="Script" uid="uid://didkv1cp42exo" path="res://Scenes/button_manager.gd" id="3_t1dhk"]
+[ext_resource type="Texture2D" uid="uid://ik8ir524yc12" path="res://Assets/Learn-N.png" id="4_opfnp"]
+[ext_resource type="Texture2D" uid="uid://dyqle203dy1vt" path="res://Assets/Learn-P.png" id="5_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://dsg5pset33wq8" path="res://Assets/Learn-H.png" id="6_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://bhef8jgh2cb3l" path="res://Assets/Settings.png" id="8_trj04"]
+[ext_resource type="Texture2D" uid="uid://m1fm0bs4a1dk" path="res://Assets/Settings-H.png" id="9_16hvj"]
+
+[node name="main_menu" type="Node2D"]
+script = ExtResource("1_vr1f0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1149.0
+offset_bottom = 646.0
+texture = ExtResource("1_cp0ys")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Button_manager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 7660.0
+offset_bottom = 3893.0
+script = ExtResource("3_t1dhk")
+
+[node name="Play" type="TextureButton" parent="Button_manager"]
+offset_left = 276.0
+offset_top = 477.0
+offset_right = 6276.0
+offset_bottom = 3852.0
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("1_1ehe0")
+texture_pressed = ExtResource("2_ce3w2")
+texture_hover = ExtResource("3_n45e2")
+
+[node name="Learn" type="TextureButton" parent="Button_manager"]
+layout_mode = 0
+offset_left = 626.0
+offset_top = 478.0
+offset_right = 6626.0
+offset_bottom = 3853.0
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("4_opfnp")
+texture_pressed = ExtResource("5_cp0ys")
+texture_hover = ExtResource("6_yhxw7")
+
+[node name="Settings" type="TextureButton" parent="Button_manager"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.146
+anchor_bottom = 0.156
+offset_left = 988.0
+offset_top = 16.0
+offset_right = 5869.64
+offset_bottom = 2783.69
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("8_trj04")
+texture_pressed = ExtResource("8_trj04")
+texture_hover = ExtResource("9_16hvj")
+
+[connection signal="pressed" from="Button_manager/Play" to="Button_manager" method="_on_play_pressed"]

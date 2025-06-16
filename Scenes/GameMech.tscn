@@ -9,7 +9,7 @@
 [node name="GameMech" type="Node2D"]
 script = ExtResource("1_s7s1h")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="GameMechanics" type="TextureRect" parent="."]
 offset_right = 5765.0
 offset_bottom = 3230.0
 scale = Vector2(0.2, 0.2)

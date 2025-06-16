@@ -1,48 +1,75 @@
-[gd_scene load_steps=3 format=3 uid="uid://blglsokuha5fe"]
+[gd_scene load_steps=14 format=3 uid="uid://blglsokuha5fe"]
 
 [ext_resource type="Script" uid="uid://dygat01raui47" path="res://Scripts/Board.gd" id="1_igt3p"]
 [ext_resource type="Texture2D" uid="uid://drj2uuyug6acs" path="res://Assets/Back.png" id="1_ml4tp"]
+[ext_resource type="Texture2D" uid="uid://cx85vjwjwhrhm" path="res://Assets/BoardBG.png" id="2_10vug"]
+[ext_resource type="FontFile" uid="uid://belhgm8to3245" path="res://Assets/handelson-six.otf" id="3_37q8m"]
+[ext_resource type="Texture2D" uid="uid://bra7tknuiumxe" path="res://Assets/Draw-N.png" id="3_fx0ao"]
+[ext_resource type="Texture2D" uid="uid://b7nxs2ec487vg" path="res://Assets/Draw-P.png" id="4_10vug"]
+[ext_resource type="Texture2D" uid="uid://gm4bp5ewcnx2" path="res://Assets/Draw-H.png" id="5_tbawi"]
+[ext_resource type="Texture2D" uid="uid://byji6u4yogqi5" path="res://Assets/Stay-N.png" id="6_gwd6f"]
+[ext_resource type="Texture2D" uid="uid://boxlxhg4ju6oe" path="res://Assets/Stay-P.png" id="7_km0w0"]
+[ext_resource type="Texture2D" uid="uid://bi1jn3qfgqsn2" path="res://Assets/Stay-H.png" id="8_kvmcw"]
+[ext_resource type="Texture2D" uid="uid://w207okehuhgk" path="res://Assets/Flip-N.png" id="9_qn4gg"]
+[ext_resource type="Texture2D" uid="uid://eqn54jgi5yyj" path="res://Assets/Flip-P.png" id="10_ydh3b"]
+[ext_resource type="Texture2D" uid="uid://be0nsk2omrj1a" path="res://Assets/Flip-H.png" id="11_vn6nc"]
 
 [node name="Board" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_igt3p")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 646.0
+texture = ExtResource("2_10vug")
+expand_mode = 1
+
 [node name="DeckSprite" type="Sprite2D" parent="."]
-position = Vector2(219, 312)
+position = Vector2(156, 323)
 scale = Vector2(0.066, 0.066)
 texture = ExtResource("1_ml4tp")
 
-[node name="DrawButton" type="Button" parent="."]
+[node name="DrawButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 473.0
-offset_top = 408.0
-offset_right = 529.0
-offset_bottom = 439.0
-text = "Draw"
+offset_left = 421.0
+offset_top = 393.0
+offset_right = 6421.0
+offset_bottom = 2543.0
+scale = Vector2(0.014, 0.014)
+texture_normal = ExtResource("3_fx0ao")
+texture_pressed = ExtResource("4_10vug")
+texture_hover = ExtResource("5_tbawi")
 
-[node name="FlipButton" type="Button" parent="."]
+[node name="StayButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 553.0
-offset_top = 408.0
-offset_right = 610.0
-offset_bottom = 439.0
-text = "Flip"
+offset_left = 607.0
+offset_top = 395.0
+offset_right = 6607.0
+offset_bottom = 2545.0
+scale = Vector2(0.014, 0.014)
+texture_normal = ExtResource("6_gwd6f")
+texture_pressed = ExtResource("7_km0w0")
+texture_hover = ExtResource("8_kvmcw")
 
-[node name="StayButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 633.0
-offset_top = 406.0
-offset_right = 694.0
-offset_bottom = 437.0
-text = "Stay"
+[node name="FlipButton" type="TextureButton" parent="."]
+offset_left = 514.0
+offset_top = 394.0
+offset_right = 6514.0
+offset_bottom = 2544.0
+scale = Vector2(0.014, 0.014)
+texture_normal = ExtResource("9_qn4gg")
+texture_pressed = ExtResource("10_ydh3b")
+texture_hover = ExtResource("11_vn6nc")
 
 [node name="DeckCountLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 152.0
-offset_top = 390.0
-offset_right = 285.0
-offset_bottom = 423.0
+offset_left = 182.0
+offset_top = 418.0
+offset_right = 332.0
+offset_bottom = 453.0
+theme_override_fonts/font = ExtResource("3_37q8m")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -55,24 +82,28 @@ offset_right = 832.0
 offset_bottom = 601.0
 
 [node name="RoundScoreLabel" type="Label" parent="HumanPlayer"]
-offset_left = 844.0
-offset_top = 471.0
-offset_right = 981.0
-offset_bottom = 497.0
+offset_left = 910.0
+offset_top = 490.0
+offset_right = 1049.0
+offset_bottom = 519.0
+theme_override_fonts/font = ExtResource("3_37q8m")
+theme_override_font_sizes/font_size = 25
 text = "Round Score:"
 vertical_alignment = 1
 
 [node name="BonusScoreLabel" type="Label" parent="HumanPlayer"]
-offset_left = 978.0
-offset_top = 472.0
-offset_right = 1021.0
-offset_bottom = 495.0
+offset_left = 1063.0
+offset_top = 494.0
+offset_right = 1106.0
+offset_bottom = 517.0
 
 [node name="TotalScoreLabel" type="Label" parent="HumanPlayer"]
-offset_left = 844.0
-offset_top = 503.0
-offset_right = 980.0
-offset_bottom = 527.0
+offset_left = 912.0
+offset_top = 543.0
+offset_right = 1048.0
+offset_bottom = 572.0
+theme_override_fonts/font = ExtResource("3_37q8m")
+theme_override_font_sizes/font_size = 25
 text = "Total Score:"
 vertical_alignment = 1
 
@@ -81,6 +112,7 @@ offset_left = 408.0
 offset_top = 301.0
 offset_right = 757.0
 offset_bottom = 344.0
+theme_override_fonts/font = ExtResource("3_37q8m")
 horizontal_alignment = 1
 
 [node name="StatusLabel" type="Label" parent="HumanPlayer"]
@@ -88,6 +120,7 @@ offset_left = 415.0
 offset_top = 344.0
 offset_right = 744.0
 offset_bottom = 388.0
+theme_override_fonts/font = ExtResource("3_37q8m")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -100,24 +133,28 @@ offset_right = 827.0
 offset_bottom = 192.0
 
 [node name="RoundScoreLabel" type="Label" parent="AIPlayer"]
-offset_left = 843.0
-offset_top = 78.0
-offset_right = 985.0
-offset_bottom = 106.0
+offset_left = 910.0
+offset_top = 72.0
+offset_right = 1052.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("3_37q8m")
+theme_override_font_sizes/font_size = 25
 text = "Round Score:"
 vertical_alignment = 1
 
 [node name="BonusScoreLabel" type="Label" parent="AIPlayer"]
-offset_left = 985.0
-offset_top = 78.0
-offset_right = 1077.0
-offset_bottom = 107.0
+offset_left = 1035.0
+offset_top = 74.0
+offset_right = 1127.0
+offset_bottom = 103.0
 
 [node name="TotalScoreLabel" type="Label" parent="AIPlayer"]
-offset_left = 844.0
-offset_top = 107.0
-offset_right = 988.0
-offset_bottom = 145.0
+offset_left = 911.0
+offset_top = 122.0
+offset_right = 1055.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("3_37q8m")
+theme_override_font_sizes/font_size = 25
 text = "Total Score:"
 vertical_alignment = 1
 
@@ -126,6 +163,7 @@ offset_left = 423.0
 offset_top = 200.0
 offset_right = 746.0
 offset_bottom = 243.0
+theme_override_fonts/font = ExtResource("3_37q8m")
 horizontal_alignment = 1
 
 [node name="StatusLabel" type="Label" parent="AIPlayer"]
@@ -133,6 +171,7 @@ offset_left = 419.0
 offset_top = 251.0
 offset_right = 748.0
 offset_bottom = 291.0
+theme_override_fonts/font = ExtResource("3_37q8m")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -140,5 +179,5 @@ vertical_alignment = 1
 
 [connection signal="ready" from="." to="." method="_ready"]
 [connection signal="pressed" from="DrawButton" to="." method="_on_draw_pressed"]
-[connection signal="pressed" from="FlipButton" to="." method="_on_flip_pressed"]
 [connection signal="pressed" from="StayButton" to="." method="_on_stay_pressed"]
+[connection signal="pressed" from="FlipButton" to="." method="_on_flip_pressed"]

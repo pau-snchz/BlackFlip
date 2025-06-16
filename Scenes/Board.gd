@@ -51,6 +51,7 @@ func update_deck_label():
 	deck_count_label.text = "Deck Left: %d" % deck.size()
 
 func update_round_start_label():
+	bonus_messages = []
 	status_label.text = ""
 	bonus_label.text = ""
 	round_score_label.text = "Round Score: 0"
@@ -83,7 +84,10 @@ func _on_draw_pressed():
 	total_flipped_value = 0
 	bonus_score = 0
 	flipped_values.clear()
+	
+	draw_button.visible = true
 	flip_button.visible = false
+	stay_button.visible = false
 
 	# Check if deck is empty — rebuild if needed
 	if deck.is_empty():
@@ -104,7 +108,8 @@ func _on_draw_pressed():
 
 	if draw_count > 0:
 		flip_button.visible = true
-		stay_button.visible = true
+		if flip_index == 1:
+			stay_button.visible = true
 		
 	update_deck_label()
 
@@ -131,6 +136,9 @@ func _on_flip_pressed():
 			round_score_label.text = "Round Score: %d" % total_flipped_value
 			flip_index += 1
 
+			if flip_index == 1:
+				stay_button.visible = true
+
 		update_deck_label()
 
 		if flip_index == hand_cards.size():
@@ -147,7 +155,7 @@ func _on_flip_pressed():
 					bonus_messages.append("Perfect 21! +10")
 
 				if bonus_messages.size() > 0:
-					bonus_label.text = " & ".join(bonus_messages)
+					bonus_label.text = "\n".join(bonus_messages)
 					bonus_score_label.text = "+%d" % bonus_score
 				else:
 					bonus_label.text = ""
@@ -174,13 +182,15 @@ func _on_flip_pressed():
 
 func _on_stay_pressed():
 	draw_button.visible = true
+	flip_button.visible = false
+	stay_button.visible = false
 
 	if total_flipped_value == 21:
 		bonus_score += 10
 		bonus_messages.append("Perfect 21! +10")
 	
 	if bonus_messages.size() > 0:
-		bonus_label.text = " & ".join(bonus_messages)
+		bonus_label.text = "\n".join(bonus_messages)
 		bonus_score_label.text = "+%d" % bonus_score
 	else:
 		bonus_label.text = ""
@@ -188,9 +198,6 @@ func _on_stay_pressed():
 
 	total_score += total_flipped_value + bonus_score
 	total_score_label.text = "Total Score: %d" % total_score
-
-	flip_button.visible = false
-	stay_button.visible = false
 
 	if total_score >= 200:
 		status_label.text = "🎉 You Won!"

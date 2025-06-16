@@ -1,56 +1,57 @@
 [gd_scene load_steps=12 format=3 uid="uid://bpmu0qt2545lh"]
 
-[ext_resource type="Texture2D" uid="uid://dpww3rxgslah2" path="res://Assets/Play-N.png" id="1_1ehe0"]
-[ext_resource type="Texture2D" uid="uid://clbf6s5sdq2ug" path="res://Assets/Bg.png" id="1_cp0ys"]
-[ext_resource type="Script" uid="uid://bys7sto2rnc07" path="res://Scenes/main_menu.gd" id="1_vr1f0"]
-[ext_resource type="Texture2D" uid="uid://b1fei2enpw4mi" path="res://Assets/Play-P.png" id="2_ce3w2"]
-[ext_resource type="Texture2D" uid="uid://chxcfjc3gkruh" path="res://Assets/Play-H.png" id="3_n45e2"]
-[ext_resource type="Script" uid="uid://didkv1cp42exo" path="res://Scenes/button_manager.gd" id="3_t1dhk"]
-[ext_resource type="Texture2D" uid="uid://ik8ir524yc12" path="res://Assets/Learn-N.png" id="4_opfnp"]
-[ext_resource type="Texture2D" uid="uid://dyqle203dy1vt" path="res://Assets/Learn-P.png" id="5_cp0ys"]
-[ext_resource type="Texture2D" uid="uid://dsg5pset33wq8" path="res://Assets/Learn-H.png" id="6_yhxw7"]
-[ext_resource type="Texture2D" uid="uid://bhef8jgh2cb3l" path="res://Assets/Settings.png" id="8_trj04"]
-[ext_resource type="Texture2D" uid="uid://m1fm0bs4a1dk" path="res://Assets/Settings-H.png" id="9_16hvj"]
+[ext_resource type="Script" uid="uid://bys7sto2rnc07" path="res://Scenes/Main_Menu.gd" id="1_2ey7y"]
+[ext_resource type="Texture2D" uid="uid://clbf6s5sdq2ug" path="res://Assets/Bg.png" id="2_u8ev7"]
+[ext_resource type="Script" uid="uid://didkv1cp42exo" path="res://Scenes/Button_Manager.gd" id="3_0ul3f"]
+[ext_resource type="Texture2D" uid="uid://cc3e5gcxsl7d4" path="res://Assets/Play-N.png" id="4_s2uu6"]
+[ext_resource type="Texture2D" uid="uid://c1rawygxbp6od" path="res://Assets/Play-P.png" id="5_cebuy"]
+[ext_resource type="Texture2D" uid="uid://bj31mfnkf3uae" path="res://Assets/Play-H.png" id="6_3a5co"]
+[ext_resource type="Texture2D" uid="uid://ddw16smrlwyd0" path="res://Assets/Learn-N.png" id="7_ysyx0"]
+[ext_resource type="Texture2D" uid="uid://dl172wnm3dx2n" path="res://Assets/Learn-P.png" id="8_q855l"]
+[ext_resource type="Texture2D" uid="uid://bwcm2ibfvxuiy" path="res://Assets/Learn-H.png" id="9_53v7h"]
+[ext_resource type="Texture2D" uid="uid://bhef8jgh2cb3l" path="res://Assets/Settings.png" id="10_s36xt"]
+[ext_resource type="Texture2D" uid="uid://5rglcgpvl84h" path="res://Assets/Settings-H.png" id="11_43bnc"]
 
-[node name="main_menu" type="Node2D"]
-script = ExtResource("1_vr1f0")
+[node name="Main_Menu" type="Node2D"]
+script = ExtResource("1_2ey7y")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1149.0
-offset_bottom = 646.0
-texture = ExtResource("1_cp0ys")
+[node name="BG" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_u8ev7")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Button_manager" type="Control" parent="."]
+[node name="Button_Manager" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 7660.0
-offset_bottom = 3893.0
-script = ExtResource("3_t1dhk")
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("3_0ul3f")
 
-[node name="Play" type="TextureButton" parent="Button_manager"]
+[node name="PlayButton" type="TextureButton" parent="Button_Manager"]
+layout_mode = 0
 offset_left = 276.0
 offset_top = 477.0
 offset_right = 6276.0
 offset_bottom = 3852.0
 scale = Vector2(0.04, 0.04)
-texture_normal = ExtResource("1_1ehe0")
-texture_pressed = ExtResource("2_ce3w2")
-texture_hover = ExtResource("3_n45e2")
+texture_normal = ExtResource("4_s2uu6")
+texture_pressed = ExtResource("5_cebuy")
+texture_hover = ExtResource("6_3a5co")
 
-[node name="Learn" type="TextureButton" parent="Button_manager"]
+[node name="LearnButton" type="TextureButton" parent="Button_Manager"]
 layout_mode = 0
 offset_left = 626.0
 offset_top = 478.0
 offset_right = 6626.0
 offset_bottom = 3853.0
 scale = Vector2(0.04, 0.04)
-texture_normal = ExtResource("4_opfnp")
-texture_pressed = ExtResource("5_cp0ys")
-texture_hover = ExtResource("6_yhxw7")
+texture_normal = ExtResource("7_ysyx0")
+texture_pressed = ExtResource("8_q855l")
+texture_hover = ExtResource("9_53v7h")
 
-[node name="Settings" type="TextureButton" parent="Button_manager"]
+[node name="SettingsButton" type="TextureButton" parent="Button_Manager"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.146
@@ -60,8 +61,8 @@ offset_top = 16.0
 offset_right = 5869.64
 offset_bottom = 2783.69
 scale = Vector2(0.03, 0.03)
-texture_normal = ExtResource("8_trj04")
-texture_pressed = ExtResource("8_trj04")
-texture_hover = ExtResource("9_16hvj")
+texture_normal = ExtResource("10_s36xt")
+texture_pressed = ExtResource("10_s36xt")
+texture_hover = ExtResource("11_43bnc")
 
-[connection signal="pressed" from="Button_manager/Play" to="Button_manager" method="_on_play_pressed"]
+[connection signal="pressed" from="Button_Manager/PlayButton" to="Button_Manager" method="_on_play_pressed"]

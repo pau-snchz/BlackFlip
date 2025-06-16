@@ -4,11 +4,12 @@ extends Control
 @onready var draw_button = $DrawButton
 @onready var flip_button = $FlipButton
 @onready var stay_button = $StayButton
-@onready var total_value_label = $TotalValueLabel
 @onready var round_score_label = $RoundScoreLabel
+@onready var bonus_score_label = $BonusScoreLabel
 @onready var total_score_label = $TotalScoreLabel
 @onready var deck_count_label = $DeckCountLabel
 @onready var status_label = $StatusLabel
+@onready var bonus_label = $BonusLabel
 
 var card_scene = preload("res://Scenes/Card.tscn")
 var back_image = preload("res://Assets/Back.png")
@@ -28,10 +29,13 @@ var card_deck_data = [
 
 var deck = []
 var hand_cards = []
+var flipped_values = []
+var bonus_messages = []
+
 var flip_index = 0
 var total_flipped_value = 0
+var bonus_score = 0
 var total_score = 0
-var flipped_values = []
 
 func _ready():
 	flip_button.visible = false
@@ -46,6 +50,12 @@ func _ready():
 func update_deck_label():
 	deck_count_label.text = "Deck Left: %d" % deck.size()
 
+func update_round_start_label():
+	status_label.text = ""
+	bonus_label.text = ""
+	round_score_label.text = "Round Score: 0"
+	bonus_score_label.text = ""
+
 func build_deck():
 	var new_deck = []
 	for card_info in card_deck_data:
@@ -54,6 +64,7 @@ func build_deck():
 	return new_deck
 
 func _on_draw_pressed():
+	update_round_start_label()
 	# Return unflipped cards to deck
 	for card in hand_cards:
 		if not card.is_flipped:
@@ -70,11 +81,9 @@ func _on_draw_pressed():
 	hand_cards.clear()
 	flip_index = 0
 	total_flipped_value = 0
+	bonus_score = 0
 	flipped_values.clear()
 	flip_button.visible = false
-
-	# Reset UI label
-	total_value_label.text = "Total Value: 0"
 
 	# Check if deck is empty — rebuild if needed
 	if deck.is_empty():
@@ -102,22 +111,24 @@ func _on_draw_pressed():
 
 func _on_flip_pressed():
 	if flip_index < hand_cards.size():
+		draw_button.visible = false
+		var bust_indicator = 0
 		var card = hand_cards[flip_index]
 		card.flip()
 
 		# Check for bust (duplicate value)
 		if card.card_value in flipped_values:
-			status_label.text = "💥 You Busted!"
+			status_label.text = "You Busted! 💥"
 			total_flipped_value = 0
 			flip_button.visible = false
 			stay_button.visible = false
-			flip_index = hand_cards.size()  # Stop further flipping
+			flip_index = hand_cards.size() 
+			bust_indicator = 1
 			round_score_label.text = "Round Score: 0"
 		else:
 			flipped_values.append(card.card_value)
 			total_flipped_value += card.card_value
 			round_score_label.text = "Round Score: %d" % total_flipped_value
-			total_value_label.text = "Total Value: %d" % total_flipped_value
 			flip_index += 1
 
 		update_deck_label()
@@ -125,14 +136,59 @@ func _on_flip_pressed():
 		if flip_index == hand_cards.size():
 			flip_button.visible = false
 			stay_button.visible = false
+
+			if bust_indicator == 0:
+				if flip_index == 5:
+					bonus_score += 15
+					bonus_messages.append("5 Unique Cards! +15")
+
+				if total_flipped_value == 21:
+					bonus_score += 10
+					bonus_messages.append("Perfect 21! +10")
+
+				if bonus_messages.size() > 0:
+					bonus_label.text = " & ".join(bonus_messages)
+					bonus_score_label.text = "+%d" % bonus_score
+				else:
+					bonus_label.text = ""
+					bonus_score_label.text = ""
+
+				status_label.text = "Round Complete! Press Draw to continue."
+
+			if bonus_score > 0:
+				bonus_score_label.text = "+%d" % bonus_score
+
+			total_score += total_flipped_value + bonus_score
+			total_score_label.text = "Total Score: %d" % total_score
+			draw_button.visible = true
+
+			if total_score >= 200:
+				status_label.text = "🎉 You Won!"
+				draw_button.visible = false
+				flip_button.visible = false
+				stay_button.visible = false
+
 	else:
 		flip_button.visible = false
 		stay_button.visible = false
 
 func _on_stay_pressed():
-	total_score += total_flipped_value
+	draw_button.visible = true
+
+	if total_flipped_value == 21:
+		bonus_score += 10
+		bonus_messages.append("Perfect 21! +10")
+	
+	if bonus_messages.size() > 0:
+		bonus_label.text = " & ".join(bonus_messages)
+		bonus_score_label.text = "+%d" % bonus_score
+	else:
+		bonus_label.text = ""
+		bonus_score_label.text = ""
+
+	total_score += total_flipped_value + bonus_score
 	total_score_label.text = "Total Score: %d" % total_score
-	status_label.text = "Round Complete! Press Draw to continue."
+
 	flip_button.visible = false
 	stay_button.visible = false
 

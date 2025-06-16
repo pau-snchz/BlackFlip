@@ -100,6 +100,7 @@ func build_deck():
 func _on_draw_pressed():
 	update_round_start_labels()
 	
+	# Return unflipped cards to deck (same as before)
 	for card_node in hand_cards:
 		if not card_node.is_flipped:
 			deck.append({"value": card_node.card_value, "texture": card_node.front_texture})
@@ -108,8 +109,11 @@ func _on_draw_pressed():
 			deck.append({"value": card_node.card_value, "texture": card_node.front_texture})
 	deck.shuffle()
 
-	for child in hand_container.get_children(): child.queue_free()
-	for child in ai_hand_container.get_children(): child.queue_free()
+	# Clear old hands (same as before)
+	for child in hand_container.get_children():
+		child.queue_free()
+	for child in ai_hand_container.get_children():
+		child.queue_free()
 		
 	hand_cards.clear(); flipped_values.clear(); flip_index = 0; total_flipped_value = 0; bonus_score = 0
 	ai_hand_cards.clear(); ai_flipped_values.clear(); ai_flip_index = 0; ai_total_flipped_value = 0; ai_bonus_score = 0
@@ -117,7 +121,7 @@ func _on_draw_pressed():
 	human_busted_this_round = false
 	human_stayed_this_round = false
 	ai_busted_this_round = false
-	ai_stayed_this_round = false # Reset new flag
+	ai_stayed_this_round = false
 	ai_turn = false
 
 	if deck.is_empty():
@@ -125,27 +129,57 @@ func _on_draw_pressed():
 		deck.shuffle()
 		print("Deck was empty. Rebuilding full deck...")
 
-	for _i in range(min(5, deck.size())):
-		if deck.is_empty(): break
+	# Draw 5 cards for human (modified to flip first card immediately)
+	for i in range(min(5, deck.size())):
+		if deck.is_empty():
+			break
 		var card_info = deck.pop_back()
 		var card = card_scene.instantiate()
-		card.front_texture = card_info["texture"]; card.back_texture = back_image; card.card_value = card_info["value"]
-		hand_container.add_child(card); hand_cards.append(card)
+		card.front_texture = card_info["texture"]
+		card.back_texture = back_image
+		card.card_value = card_info["value"]
+		hand_container.add_child(card)
+		hand_cards.append(card)
 		
-	for _i in range(min(5, deck.size())):
-		if deck.is_empty(): break
+		# Flip the first card immediately
+		if i == 0:
+			card.flip()
+			flipped_values.append(card.card_value)
+			total_flipped_value += card.card_value
+			flip_index = 1  # We've already flipped one card
+			round_score_label.text = "Round Score: %d" % total_flipped_value
+		
+	# Draw 5 cards for AI (modified to flip first card immediately)
+	for i in range(min(5, deck.size())):
+		if deck.is_empty():
+			break
 		var card_info = deck.pop_back()
 		var card = card_scene.instantiate()
-		card.front_texture = card_info["texture"]; card.back_texture = back_image; card.card_value = card_info["value"]
-		ai_hand_container.add_child(card); ai_hand_cards.append(card)
+		card.front_texture = card_info["texture"]
+		card.back_texture = back_image
+		card.card_value = card_info["value"]
+		ai_hand_container.add_child(card)
+		ai_hand_cards.append(card)
+		
+		# Flip the first card immediately
+		if i == 0:
+			card.flip()
+			ai_flipped_values.append(card.card_value)
+			ai_total_flipped_value += card.card_value
+			ai_flip_index = 1  # AI has already flipped one card
+			ai_round_score_label.text = "AI Round Score: %d" % ai_total_flipped_value
 
 	draw_button.visible = false
 	if hand_cards.size() > 0:
-		flip_button.visible = true; flip_button.disabled = false
-		stay_button.visible = true; stay_button.disabled = true
-		status_label.text = "Your turn. Flip a card."
+		flip_button.visible = true
+		flip_button.disabled = false
+		# Enable stay button if we already have a flipped card
+		stay_button.visible = true
+		stay_button.disabled = (flip_index == 0)
+		status_label.text = "Your turn. You already flipped %d (Score: %d)" % [hand_cards[0].card_value, total_flipped_value]
 	else:
-		flip_button.visible = false; stay_button.visible = false
+		flip_button.visible = false
+		stay_button.visible = false
 		status_label.text = "You have no cards."
 		if ai_hand_cards.is_empty():
 			status_label.text += " AI has no cards. Press Draw."
@@ -156,6 +190,8 @@ func _on_draw_pressed():
 
 	if ai_hand_cards.is_empty():
 		ai_status_label.text = "AI has no cards this round."
+	else:
+		ai_status_label.text = "AI flipped %d (Score: %d)" % [ai_hand_cards[0].card_value, ai_total_flipped_value]
 		
 	update_deck_label()
 

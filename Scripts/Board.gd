@@ -87,7 +87,7 @@ func update_round_start_labels():
 	
 	ai_status_label.text = "Waiting..."
 	ai_bonus_label.text = ""
-	ai_round_score_label.text = "AI Round Score: 0"
+	ai_round_score_label.text = "Round Score: 0"
 	ai_bonus_score_label.text = ""
 
 func build_deck():

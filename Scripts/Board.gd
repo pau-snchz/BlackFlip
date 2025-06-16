@@ -281,7 +281,7 @@ func _calculate_human_final_round_score():
 	total_score_label.text = "Total Score: %d" % total_score
 
 func _check_human_win() -> bool:
-	if total_score >= 150:
+	if total_score >= 200:
 		status_label.text = "🎉 You Won!"
 		_end_game_buttons()
 		return true
@@ -410,7 +410,7 @@ func _calculate_ai_final_round_score():
 	ai_total_score_label.text = "Total Score: %d" % ai_total_score
 
 func _check_ai_win() -> bool:
-	if ai_total_score >= 150:
+	if ai_total_score >= 200:
 		ai_status_label.text = "🤖 AI Won!"
 		_end_game_buttons()
 		return true

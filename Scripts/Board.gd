@@ -177,7 +177,7 @@ func _on_draw_pressed():
 			ai_flipped_values.append(card.card_value)
 			ai_total_flipped_value += card.card_value
 			ai_flip_index = 1  # AI has already flipped one card
-			ai_round_score_label.text = "AI Round Score: %d" % ai_total_flipped_value
+			ai_round_score_label.text = "Round Score: %d" % ai_total_flipped_value
 
 	draw_button.visible = false
 	if hand_cards.size() > 0:

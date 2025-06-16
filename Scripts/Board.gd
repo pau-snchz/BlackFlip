@@ -124,13 +124,16 @@ func _on_draw_pressed():
 	ai_stayed_this_round = false
 	ai_turn = false
 
-	if deck.is_empty():
-		deck = build_deck()
-		deck.shuffle()
-		print("Deck was empty. Rebuilding full deck...")
+	# Check if we have enough cards (10 needed - 5 per player)
+	if deck.size() < 10: 
+		# Combine remaining cards with a fresh deck
+		var fresh_deck = build_deck()
+		deck.append_array(fresh_deck)
+		print("Combined remaining cards with fresh deck. Total now: ", deck.size())
+	deck.shuffle()
 
 	# Draw 5 cards for human (modified to flip first card immediately)
-	for i in range(min(5, deck.size())):
+	for i in range(5):
 		if deck.is_empty():
 			break
 		var card_info = deck.pop_back()
@@ -150,7 +153,7 @@ func _on_draw_pressed():
 			round_score_label.text = "Round Score: %d" % total_flipped_value
 		
 	# Draw 5 cards for AI (modified to flip first card immediately)
-	for i in range(min(5, deck.size())):
+	for i in range(5):
 		if deck.is_empty():
 			break
 		var card_info = deck.pop_back()
@@ -268,7 +271,7 @@ func _calculate_human_final_round_score():
 	total_score_label.text = "Total Score: %d" % total_score
 
 func _check_human_win() -> bool:
-	if total_score >= 200:
+	if total_score >= 150:
 		status_label.text = "🎉 You Won!"
 		_end_game_buttons()
 		return true
@@ -397,7 +400,7 @@ func _calculate_ai_final_round_score():
 	ai_total_score_label.text = "AI Total Score: %d" % ai_total_score
 
 func _check_ai_win() -> bool:
-	if ai_total_score >= 200:
+	if ai_total_score >= 150:
 		ai_status_label.text = "🤖 AI Won!"
 		_end_game_buttons()
 		return true

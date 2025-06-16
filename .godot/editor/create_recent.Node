@@ -1,3 +1,5 @@
+AudioStreamPlayer
+AudioStreamPlayer2D
 TextureRect
 TextureButton
 Control
@@ -10,5 +12,3 @@ Sprite2D
 HBoxContainer
 Container
 CollisionShape2D
-Area2D
-CanvasLayer

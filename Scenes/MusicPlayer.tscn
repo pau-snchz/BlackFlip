@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b64c6cjmb0qbj"]
+
+[ext_resource type="AudioStream" uid="uid://cludw310rq24k" path="res://Assets/Retro Fun Upbeat Royalty Free Background Music (Full version).mp3" id="1_5psdy"]
+[ext_resource type="Script" uid="uid://dj5h5ucow35ke" path="res://Scripts/music_player.gd" id="1_w8kvg"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+script = ExtResource("1_w8kvg")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_5psdy")
+volume_db = -15.0
+autoplay = true

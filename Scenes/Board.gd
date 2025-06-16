@@ -1,16 +1,23 @@
 extends Control
 
-
 @onready var draw_button = $DrawButton
 @onready var flip_button = $FlipButton
 @onready var stay_button = $StayButton
 @onready var deck_count_label = $DeckCountLabel
+
 @onready var hand_container = $HumanPlayer/HandContainer
 @onready var round_score_label = $HumanPlayer/RoundScoreLabel
 @onready var bonus_score_label = $HumanPlayer/BonusScoreLabel
 @onready var total_score_label = $HumanPlayer/TotalScoreLabel
 @onready var status_label = $HumanPlayer/StatusLabel
 @onready var bonus_label = $HumanPlayer/BonusLabel
+
+@onready var ai_hand_container = $AIPlayer/HandContainer
+@onready var ai_round_score_label = $AIPlayer/RoundScoreLabel
+@onready var ai_bonus_score_label = $AIPlayer/BonusScoreLabel
+@onready var ai_total_score_label = $AIPlayer/TotalScoreLabel
+@onready var ai_status_label = $AIPlayer/StatusLabel
+@onready var ai_bonus_label = $AIPlayer/BonusLabel
 
 var card_scene = preload("res://Scenes/Card.tscn")
 var back_image = preload("res://Assets/Back.png")

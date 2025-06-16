@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1750082198
+::res://::1750083599
 icon.svg::CompressedTexture2D/CompressedTexture2D::2765094835560085484::1749797514::1749797514::1::::<><><>0<>0<>5effb4b34b0f844f4dd100a9c6d4ec51<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-README.md::TextFile::-1::1749797514::0::1::::<><><>0<>0<><>::
+README.md::TextFile/TextFile::-1::1749797514::0::1::::<><><>0<>0<><>::
 ::res://Assets/::1750082309
 Back-H.png::CompressedTexture2D/CompressedTexture2D::7678440079127883167::1750002201::1750082151::1::::<><><>0<>0<>35e55b06dd25c4ed5fc7313d0707cd5f<>res://.godot/imported/Back-H.png-e5976f458a23555ae02ced8bf20ac843.ctex::
 Back-N.png::CompressedTexture2D/CompressedTexture2D::7926957332369305910::1750002201::1750082151::1::::<><><>0<>0<>8922a8099ad4318b87185cfa411fe9fd<>res://.godot/imported/Back-N.png-9b288d03ca3c84cee9c52770a77dd3f5.ctex::
@@ -20,7 +20,7 @@ Card 7.png::CompressedTexture2D/CompressedTexture2D::1975514051076804397::174979
 Card 8.png::CompressedTexture2D/CompressedTexture2D::1334352269661024237::1749797514::1749797514::1::::<><><>0<>0<>7463e476177b69d6dc43c5761cad452a<>res://.godot/imported/Card 8.png-053d0dd4b55ff8c1848eef5357f89594.ctex::
 Card 9.png::CompressedTexture2D/CompressedTexture2D::8474058416642808327::1749797514::1749797514::1::::<><><>0<>0<>7ff859c7e8ba4b9bdb0a757ded45c410<>res://.godot/imported/Card 9.png-0f5420ce690c54c2aa6e30a74d7c97b9.ctex::
 Card 10.png::CompressedTexture2D/CompressedTexture2D::7511260770300475193::1749797514::1749797514::1::::<><><>0<>0<>4dd46fe865cb8b6295bf76aca793087a<>res://.godot/imported/Card 10.png-aafc28aa9060789430a829f6c556bdc6.ctex::
-GameMech.png::CompressedTexture2D::8175557354595676339::1750082290::1750082277::1::::<><><>0<>0<>cac6750e915b2c61a9df49ec99d52f28<>res://.godot/imported/GameMech.png-6dd1b6947baa86dcb8417a30cb0b6a67.ctex::
+GameMech.png::CompressedTexture2D/CompressedTexture2D::8175557354595676339::1750082290::1750082277::1::::<><><>0<>0<>cac6750e915b2c61a9df49ec99d52f28<>res://.godot/imported/GameMech.png-6dd1b6947baa86dcb8417a30cb0b6a67.ctex::
 Learn-H.png::CompressedTexture2D/CompressedTexture2D::3935481241574335968::1749998809::1750082151::1::::<><><>0<>0<>0c34c49fa78aad2f350c7e3a4106d8d3<>res://.godot/imported/Learn-H.png-afb32418f6a4dfe31e51bc9f8315a986.ctex::
 Learn-N.png::CompressedTexture2D/CompressedTexture2D::7416879858751645279::1749998809::1750082151::1::::<><><>0<>0<>6ee6222848b3c27456942d4dff3a7efa<>res://.godot/imported/Learn-N.png-8f2def75cb164e6f4581b7951cf0888b.ctex::
 Learn-P.png::CompressedTexture2D/CompressedTexture2D::7987005489086121111::1749998809::1750082151::1::::<><><>0<>0<>abe25f008d355e7cadb37355b9d736a8<>res://.godot/imported/Learn-P.png-f82f9fea75cc75cbcd8a98dfce78c3a3.ctex::
@@ -30,14 +30,15 @@ Play-P.png::CompressedTexture2D/CompressedTexture2D::6632886282136174915::174999
 Settings-H.png::CompressedTexture2D/CompressedTexture2D::2141143791675133037::1749999745::1750082151::1::::<><><>0<>0<>e984f72ca7de421e3a5cde9a17b98ecd<>res://.godot/imported/Settings-H.png-a062b857dcee48e6c4a1b897cbbddc60.ctex::
 Settings.png::CompressedTexture2D/CompressedTexture2D::2886363098671448295::1749798595::1749798598::1::::<><><>0<>0<>997a82dfe2e458a70d5f121c20072f6b<>res://.godot/imported/Settings.png-b22f139da62173be50aef314b6a9e91b.ctex::
 Table.png::CompressedTexture2D/CompressedTexture2D::19122629619263361::1749798615::1749798619::1::::<><><>0<>0<>f2f55a9b892b1221450b67ad5290c809<>res://.godot/imported/Table.png-310c2b9eac024b26463eb2f776aeb85f.ctex::
-::res://Scenes/::1750082597
-Board.tscn::PackedScene::3171585013139579030::1750082151::0::1::::<><><>0<>0<><>::uid://dygat01raui47::::res://Scripts/Board.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png
-Card.tscn::PackedScene::866729740138005448::1750082151::0::1::::<><><>0<>0<><>::uid://cpmh2gqhql01::::res://Scripts/Card.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png
-main_menu.tscn::PackedScene::3465285727008163421::1750082151::0::1::::<><><>0<>0<><>::uid://bys7sto2rnc07::::res://Scripts/Main_Menu.gd<>uid://clbf6s5sdq2ug::::res://Assets/Bg.png<>uid://didkv1cp42exo::::res://Scripts/Button_Manager.gd<>uid://cc3e5gcxsl7d4::::res://Assets/Play-N.png<>uid://c1rawygxbp6od::::res://Assets/Play-P.png<>uid://bj31mfnkf3uae::::res://Assets/Play-H.png<>uid://ddw16smrlwyd0::::res://Assets/Learn-N.png<>uid://dl172wnm3dx2n::::res://Assets/Learn-P.png<>uid://bwcm2ibfvxuiy::::res://Assets/Learn-H.png<>uid://bhef8jgh2cb3l::::res://Assets/Settings.png<>uid://5rglcgpvl84h::::res://Assets/Settings-H.png
-GameMech.tscn::PackedScene::5961364127616199165::1750082597::0::1::::<><><>0<>0<><>::
-game_mech.gd::GDScript::1807465137262661240::1750082940::0::1::::<>Node2D<><>0<>0<><>::
-::res://Scripts/::1750082286
-Board.gd::GDScript::8856215849022499034::1750082151::0::1::::<>Control<><>0<>0<><>::
-Button_Manager.gd::GDScript::7727611974463473332::1750082151::0::1::::<>Control<><>0<>0<><>::
-Card.gd::GDScript::172085886193737224::1750082151::0::1::::<>Control<><>0<>0<><>::
-Main_Menu.gd::GDScript::4110087839458672082::1750082151::0::1::::<>Node2D<><>0<>0<><>::
+::res://Scenes/::1750083549
+Board.tscn::PackedScene::3171585013139579030::1750083224::0::1::::<><><>0<>0<><>::uid://dygat01raui47::::res://Scripts/Board.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png
+Card.tscn::PackedScene/PackedScene::866729740138005448::1750082151::0::1::::<><><>0<>0<><>::uid://cpmh2gqhql01::::res://Scripts/Card.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png
+GameMech.tscn::PackedScene::5961364127616199165::1750083549::0::1::::<><><>0<>0<><>::uid://00sxl4rbvecm::::res://Scripts/game_mech.gd<>uid://doqkh838hee08::::res://Assets/GameMech.png<>uid://dk643gp1psr4y::::res://Assets/Back-N.png<>uid://brhdhbokn4yq6::::res://Assets/Back-P.png<>uid://dhnq1y6rx8i2r::::res://Assets/Back-H.png
+main_menu.tscn::PackedScene::3465285727008163421::1750083259::0::1::::<><><>0<>0<><>::uid://bys7sto2rnc07::::res://Scripts/Main_Menu.gd<>uid://clbf6s5sdq2ug::::res://Assets/Bg.png<>uid://didkv1cp42exo::::res://Scripts/Button_Manager.gd<>uid://cc3e5gcxsl7d4::::res://Assets/Play-N.png<>uid://c1rawygxbp6od::::res://Assets/Play-P.png<>uid://bj31mfnkf3uae::::res://Assets/Play-H.png<>uid://ddw16smrlwyd0::::res://Assets/Learn-N.png<>uid://dl172wnm3dx2n::::res://Assets/Learn-P.png<>uid://bwcm2ibfvxuiy::::res://Assets/Learn-H.png<>uid://bhef8jgh2cb3l::::res://Assets/Settings.png<>uid://5rglcgpvl84h::::res://Assets/Settings-H.png
+::res://Scripts/::1750083506
+AI.gd::GDScript::7606192861214253346::1750083506::0::1::::AIPlayer<>Node<><>0<>0<><>::
+Board.gd::GDScript/GDScript::8856215849022499034::1750082151::0::1::::<>Control<><>0<>0<><>::
+Button_Manager.gd::GDScript/GDScript::7727611974463473332::1750082151::0::1::::<>Control<><>0<>0<><>::
+Card.gd::GDScript/GDScript::172085886193737224::1750082151::0::1::::<>Control<><>0<>0<><>::
+game_mech.gd::GDScript::1807465137262661240::1750083209::0::1::::<>Node2D<><>0<>0<><>::
+Main_Menu.gd::GDScript/GDScript::4110087839458672082::1750082151::0::1::::<>Node2D<><>0<>0<><>::

@@ -66,3 +66,4 @@ texture_pressed = ExtResource("10_s36xt")
 texture_hover = ExtResource("11_43bnc")
 
 [connection signal="pressed" from="Button_Manager/PlayButton" to="Button_Manager" method="_on_play_pressed"]
+[connection signal="pressed" from="Button_Manager/LearnButton" to="." method="_on_learn_button_pressed"]

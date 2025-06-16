@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://blglsokuha5fe"]
 
-[ext_resource type="Script" uid="uid://dygat01raui47" path="res://Scenes/Board.gd" id="1_igt3p"]
+[ext_resource type="Script" uid="uid://dygat01raui47" path="res://Scripts/Board.gd" id="1_igt3p"]
 [ext_resource type="Texture2D" uid="uid://drj2uuyug6acs" path="res://Assets/Back.png" id="1_ml4tp"]
 
 [node name="Board" type="Control"]
@@ -38,6 +38,7 @@ offset_bottom = 437.0
 text = "Stay"
 
 [node name="DeckCountLabel" type="Label" parent="."]
+layout_mode = 0
 offset_left = 152.0
 offset_top = 390.0
 offset_right = 285.0
@@ -93,45 +94,45 @@ vertical_alignment = 1
 [node name="AIPlayer" type="Node2D" parent="."]
 
 [node name="HandContainer" type="HBoxContainer" parent="AIPlayer"]
-offset_left = 316.0
-offset_top = 28.0
-offset_right = 854.0
-offset_bottom = 174.0
+offset_left = 289.0
+offset_top = 46.0
+offset_right = 827.0
+offset_bottom = 192.0
 
 [node name="RoundScoreLabel" type="Label" parent="AIPlayer"]
-offset_left = 841.0
-offset_top = 51.0
-offset_right = 983.0
-offset_bottom = 79.0
+offset_left = 843.0
+offset_top = 78.0
+offset_right = 985.0
+offset_bottom = 106.0
 text = "Round Score:"
 vertical_alignment = 1
 
 [node name="BonusScoreLabel" type="Label" parent="AIPlayer"]
-offset_left = 983.0
-offset_top = 51.0
-offset_right = 1075.0
-offset_bottom = 80.0
+offset_left = 985.0
+offset_top = 78.0
+offset_right = 1077.0
+offset_bottom = 107.0
 
 [node name="TotalScoreLabel" type="Label" parent="AIPlayer"]
-offset_left = 842.0
-offset_top = 80.0
-offset_right = 986.0
-offset_bottom = 118.0
+offset_left = 844.0
+offset_top = 107.0
+offset_right = 988.0
+offset_bottom = 145.0
 text = "Total Score:"
 vertical_alignment = 1
 
 [node name="BonusLabel" type="Label" parent="AIPlayer"]
-offset_left = 425.0
-offset_top = 184.0
-offset_right = 748.0
-offset_bottom = 227.0
+offset_left = 423.0
+offset_top = 200.0
+offset_right = 746.0
+offset_bottom = 243.0
 horizontal_alignment = 1
 
 [node name="StatusLabel" type="Label" parent="AIPlayer"]
-offset_left = 421.0
-offset_top = 235.0
-offset_right = 750.0
-offset_bottom = 275.0
+offset_left = 419.0
+offset_top = 251.0
+offset_right = 748.0
+offset_bottom = 291.0
 horizontal_alignment = 1
 vertical_alignment = 1
 

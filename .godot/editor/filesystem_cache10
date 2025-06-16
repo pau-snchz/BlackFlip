@@ -30,10 +30,10 @@ Play-P.png::CompressedTexture2D/CompressedTexture2D::6632886282136174915::175003
 Settings-H.png::CompressedTexture2D/CompressedTexture2D::2141143791675133037::1750031109::1750031149::1::::<><><>0<>0<>e984f72ca7de421e3a5cde9a17b98ecd<>res://.godot/imported/Settings-H.png-a062b857dcee48e6c4a1b897cbbddc60.ctex::
 Settings.png::CompressedTexture2D/CompressedTexture2D::2886363098671448295::1749996571::1750031149::1::::<><><>0<>0<>997a82dfe2e458a70d5f121c20072f6b<>res://.godot/imported/Settings.png-b22f139da62173be50aef314b6a9e91b.ctex::
 Table.png::CompressedTexture2D/CompressedTexture2D::19122629619263361::1749996571::1750031149::1::::<><><>0<>0<>f2f55a9b892b1221450b67ad5290c809<>res://.godot/imported/Table.png-310c2b9eac024b26463eb2f776aeb85f.ctex::
-::res://Scenes/::1750041916
-Board.gd::GDScript::8856215849022499034::1750041651::0::1::::<>Control<><>0<>0<><>::
-Board.tscn::PackedScene::3171585013139579030::1750041916::0::1::::<><><>0<>0<><>::uid://dygat01raui47::::res://Scenes/Board.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png
-Button_Manager.gd::GDScript::7727611974463473332::1750031197::0::1::::<>Control<><>0<>0<><>::
+::res://Scenes/::1750051269
+Board.gd::GDScript::8856215849022499034::1750050581::0::1::::<>Control<><>0<>0<><>::
+Board.tscn::PackedScene::3171585013139579030::1750052084::0::1::::<><><>0<>0<><>::uid://dygat01raui47::::res://Scenes/Board.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png
+Button_Manager.gd::GDScript::7727611974463473332::1750052084::0::1::::<>Control<><>0<>0<><>::
 Card.gd::GDScript/GDScript::172085886193737224::1749147153::0::1::::<>Control<><>0<>0<><>::
 Card.tscn::PackedScene/PackedScene::866729740138005448::1750003811::0::1::::<><><>0<>0<><>::uid://cpmh2gqhql01::::res://Scenes/Card.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png
 Main_Menu.gd::GDScript/GDScript::4110087839458672082::1750037095::0::1::::<>Node2D<><>0<>0<><>::

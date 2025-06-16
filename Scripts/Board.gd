@@ -1,5 +1,6 @@
 extends Control
 
+@onready var back_button = $BackButton
 @onready var draw_button = $DrawButton
 @onready var flip_button = $FlipButton
 @onready var stay_button = $StayButton
@@ -60,6 +61,9 @@ var human_stayed_this_round = false
 var ai_busted_this_round = false
 var ai_stayed_this_round = false # New flag
 
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
 func _ready():
 	add_child(ai_thinking_timer)
 	ai_thinking_timer.wait_time = 1.0 
@@ -99,6 +103,9 @@ func build_deck():
 
 func _on_draw_pressed():
 	update_round_start_labels()
+	
+	flip_button.visible = true
+	stay_button.visible = true
 	
 	# Return unflipped cards to deck (same as before)
 	for card_node in hand_cards:
@@ -207,7 +214,10 @@ func _on_flip_pressed():
 	card.flip()
 
 	if card.card_value in flipped_values: # Human Busts
+		flip_button.visible = false
+		stay_button.visible = false
 		status_label.text = "You Busted! 💥 Round Score: 0"
+		
 		total_flipped_value = 0 # Score is 0 if busted
 		round_score_label.text = "Round Score: 0"
 		bonus_label.text = ""; bonus_score_label.text = "" # No bonus if busted
@@ -239,7 +249,7 @@ func _on_flip_pressed():
 	update_deck_label()
 
 func _on_stay_pressed():
-	flip_button.disabled = true; stay_button.disabled = true
+	flip_button.visible = false; stay_button.visible = false
 	human_stayed_this_round = true
 	_calculate_human_final_round_score()
 	status_label.text = "You stayed. Final Round Score: %d" % total_flipped_value
@@ -344,13 +354,13 @@ func _process_ai_flip_decision():
 		ai_busted_this_round = true
 		ai_status_label.text = "AI Busted! 💥 Round Score: 0"
 		ai_total_flipped_value = 0 # Score is 0
-		ai_round_score_label.text = "AI Round Score: 0"
+		ai_round_score_label.text = "Round Score: 0"
 		_calculate_ai_final_round_score() # AI's round participation is over
 		if _check_ai_win(): return
 	else: # AI flips successfully
 		ai_flipped_values.append(card.card_value)
 		ai_total_flipped_value += card.card_value
-		ai_round_score_label.text = "AI Round Score: %d" % ai_total_flipped_value
+		ai_round_score_label.text = "Round Score: %d" % ai_total_flipped_value
 		ai_flip_index += 1
 		ai_status_label.text = "AI flipped %d. Score: %d" % [card.card_value, ai_total_flipped_value]
 
@@ -385,7 +395,7 @@ func _calculate_ai_final_round_score():
 			current_ai_bonus_messages.append("Perfect 21! +10")
 	else: # Busted
 		ai_total_flipped_value = 0 # Ensure round score is 0
-		ai_round_score_label.text = "AI Round Score: 0"
+		ai_round_score_label.text = "Round Score: 0"
 
 
 	if current_ai_bonus_messages.size() > 0 and not ai_busted_this_round:
@@ -427,7 +437,6 @@ func _determine_next_player_or_end_round():
 			# Clear AI status if it just took a normal flip and didn't end its round
 			if not ai_status_label.text.contains("AI flipped"): # Don't overwrite "AI flipped X" immediately
 				ai_status_label.text = "AI acted. Waiting for Human."
-
 
 		flip_button.disabled = false
 		stay_button.disabled = (flip_index == 0) # Enable stay only if human has flipped at least once

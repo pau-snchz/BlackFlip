@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1750093120
+::res://::1750093431
 icon.svg::CompressedTexture2D/CompressedTexture2D::2765094835560085484::1749119954::1749119973::1::::<><><>0<>0<>5effb4b34b0f844f4dd100a9c6d4ec51<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile/TextFile::-1::1749149214::0::1::::<><><>0<>0<><>::
-::res://Assets/::1750092919
+::res://Assets/::1750093431
 AITurn.png::CompressedTexture2D/CompressedTexture2D::932895440590512225::1750090889::1750091057::1::::<><><>0<>0<>8b9667fff8a265bbd0fb8c925272552c<>res://.godot/imported/AITurn.png-f9a30b9e530ddec269744e3ebfa0f76c.ctex::
 Back-H.png::CompressedTexture2D/CompressedTexture2D::7678440079127883167::1750031109::1750031144::1::::<><><>0<>0<>35e55b06dd25c4ed5fc7313d0707cd5f<>res://.godot/imported/Back-H.png-e5976f458a23555ae02ced8bf20ac843.ctex::
 Back-N.png::CompressedTexture2D/CompressedTexture2D::7926957332369305910::1750031109::1750031144::1::::<><><>0<>0<>8922a8099ad4318b87185cfa411fe9fd<>res://.godot/imported/Back-N.png-9b288d03ca3c84cee9c52770a77dd3f5.ctex::
@@ -37,20 +37,23 @@ Learn-P.png::CompressedTexture2D/CompressedTexture2D::7987005489086121111::17500
 Play-H.png::CompressedTexture2D/CompressedTexture2D::3077523208049220740::1750031109::1750031148::1::::<><><>0<>0<>f6adb63d0239bbd30b4358e794f0b0f8<>res://.godot/imported/Play-H.png-47dde74f8719a2dacf4104489b741503.ctex::
 Play-N.png::CompressedTexture2D/CompressedTexture2D::4971318392863401307::1750031109::1750031148::1::::<><><>0<>0<>1f458996deb89dc182ff4fdaa0e69ad1<>res://.godot/imported/Play-N.png-f7b8fb329ea2271fa2a471f2b3af01d8.ctex::
 Play-P.png::CompressedTexture2D/CompressedTexture2D::6632886282136174915::1750031109::1750031148::1::::<><><>0<>0<>5a239d94cc79e1ba6dc606a7cc8264a1<>res://.godot/imported/Play-P.png-38e76c71413806fb1b4b59fa42df5cb5.ctex::
+Retro Fun Upbeat Royalty Free Background Music (Full version).mp3::AudioStreamMP3::5586429152907944192::1750093431::1750093498::1::::<><><>0<>0<>b7375f1d0c00279bb5b16a73f078f289<>res://.godot/imported/Retro Fun Upbeat Royalty Free Background Music (Full version).mp3-9ecd92b22f88dba05c94f66f66aea72c.mp3str::
 Stay-H.png::CompressedTexture2D/CompressedTexture2D::3002176418265096093::1750090890::1750091050::1::::<><><>0<>0<>a1a23316e0d0a2a3867dc6ee6e3a0887<>res://.godot/imported/Stay-H.png-04002130e5ad30a1fa367e9e17e2770e.ctex::
 Stay-N.png::CompressedTexture2D/CompressedTexture2D::4090074522721344190::1750090890::1750091051::1::::<><><>0<>0<>4d27a2e081e5ea9f4fb666baa9bc86f8<>res://.godot/imported/Stay-N.png-c40d53571f4a26a53d28f0d093b11d94.ctex::
 Stay-P.png::CompressedTexture2D/CompressedTexture2D::3417254521411927212::1750090890::1750091051::1::::<><><>0<>0<>b6a5bffc1767a86458c1f4559f174ea6<>res://.godot/imported/Stay-P.png-dc0a9580d07cc45621aaa681dce5edaf.ctex::
 Table.png::CompressedTexture2D/CompressedTexture2D::19122629619263361::1749996571::1750031149::1::::<><><>0<>0<>f2f55a9b892b1221450b67ad5290c809<>res://.godot/imported/Table.png-310c2b9eac024b26463eb2f776aeb85f.ctex::
 UserTurn.png::CompressedTexture2D/CompressedTexture2D::4303824576531561790::1750090890::1750091058::1::::<><><>0<>0<>cf981f0310cd4831a9b50709232b2581<>res://.godot/imported/UserTurn.png-8bea0103940776c0c2d7b7964447d83a.ctex::
-::res://Scenes/::1750093058
-Board.tscn::PackedScene::3171585013139579030::1750093058::0::1::::<><><>0<>0<><>::uid://dygat01raui47::::res://Scripts/Board.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png<>uid://cx85vjwjwhrhm::::res://Assets/BoardBG.png<>uid://belhgm8to3245::::res://Assets/handelson-six.otf<>uid://bra7tknuiumxe::::res://Assets/Draw-N.png<>uid://b7nxs2ec487vg::::res://Assets/Draw-P.png<>uid://gm4bp5ewcnx2::::res://Assets/Draw-H.png<>uid://byji6u4yogqi5::::res://Assets/Stay-N.png<>uid://boxlxhg4ju6oe::::res://Assets/Stay-P.png<>uid://bi1jn3qfgqsn2::::res://Assets/Stay-H.png<>uid://w207okehuhgk::::res://Assets/Flip-N.png<>uid://eqn54jgi5yyj::::res://Assets/Flip-P.png<>uid://be0nsk2omrj1a::::res://Assets/Flip-H.png<>uid://bphwxxjt4anum::::res://Assets/handelsonsix_cyr_six.otf
+::res://Scenes/::1750093431
+Board.tscn::PackedScene::3171585013139579030::1750093412::0::1::::<><><>0<>0<><>::uid://dygat01raui47::::res://Scripts/Board.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png<>uid://cx85vjwjwhrhm::::res://Assets/BoardBG.png<>uid://bra7tknuiumxe::::res://Assets/Draw-N.png<>uid://b7nxs2ec487vg::::res://Assets/Draw-P.png<>uid://gm4bp5ewcnx2::::res://Assets/Draw-H.png<>uid://byji6u4yogqi5::::res://Assets/Stay-N.png<>uid://boxlxhg4ju6oe::::res://Assets/Stay-P.png<>uid://bi1jn3qfgqsn2::::res://Assets/Stay-H.png<>uid://w207okehuhgk::::res://Assets/Flip-N.png<>uid://eqn54jgi5yyj::::res://Assets/Flip-P.png<>uid://be0nsk2omrj1a::::res://Assets/Flip-H.png<>uid://bphwxxjt4anum::::res://Assets/handelsonsix_cyr_six.otf
 Card.tscn::PackedScene/PackedScene::866729740138005448::1750052084::0::1::::<><><>0<>0<><>::uid://cpmh2gqhql01::::res://Scripts/Card.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png
 GameMech.tscn::PackedScene::5961364127616199165::1750091039::0::1::::<><><>0<>0<><>::uid://00sxl4rbvecm::::res://Scripts/game_mech.gd<>uid://doqkh838hee08::::res://Assets/GameMech.png<>uid://dk643gp1psr4y::::res://Assets/Back-N.png<>uid://brhdhbokn4yq6::::res://Assets/Back-P.png<>uid://dhnq1y6rx8i2r::::res://Assets/Back-H.png
 main_menu.tscn::PackedScene::3465285727008163421::1750090890::0::1::::<><><>0<>0<><>::uid://bys7sto2rnc07::::res://Scripts/Main_Menu.gd<>uid://clbf6s5sdq2ug::::res://Assets/Bg.png<>uid://didkv1cp42exo::::res://Scripts/Button_Manager.gd<>uid://cc3e5gcxsl7d4::::res://Assets/Play-N.png<>uid://c1rawygxbp6od::::res://Assets/Play-P.png<>uid://bj31mfnkf3uae::::res://Assets/Play-H.png<>uid://ddw16smrlwyd0::::res://Assets/Learn-N.png<>uid://dl172wnm3dx2n::::res://Assets/Learn-P.png<>uid://bwcm2ibfvxuiy::::res://Assets/Learn-H.png
-::res://Scripts/::1750092919
+MusicPlayer.tscn::PackedScene::-1::1750093431::0::1::::<><><>0<>0<><>::
+::res://Scripts/::1750093431
 AI.gd::GDScript/GDScript::-1::1750083868::0::1::::AIPlayer<>Node<><>0<>0<><>::
 Board.gd::GDScript::8856215849022499034::1750091131::0::1::::<>Control<><>0<>0<><>::
 Button_Manager.gd::GDScript/GDScript::7727611974463473332::1750052084::0::1::::<>Control<><>0<>0<><>::
 Card.gd::GDScript/GDScript::172085886193737224::1749147153::0::1::::<>Control<><>0<>0<><>::
 game_mech.gd::GDScript::1807465137262661240::1750090890::0::1::::<>Node2D<><>0<>0<><>::
 Main_Menu.gd::GDScript::4110087839458672082::1750090890::0::1::::<>Node2D<><>0<>0<><>::
+music_player.gd::GDScript::-1::1750093431::0::1::::<>AudioStreamPlayer<><>0<>0<><>::

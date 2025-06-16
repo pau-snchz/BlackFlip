@@ -1,12 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://blglsokuha5fe"]
+[gd_scene load_steps=17 format=3 uid="uid://blglsokuha5fe"]
 
 [ext_resource type="Script" uid="uid://dygat01raui47" path="res://Scripts/Board.gd" id="1_igt3p"]
 [ext_resource type="Texture2D" uid="uid://drj2uuyug6acs" path="res://Assets/Back.png" id="1_ml4tp"]
 [ext_resource type="Texture2D" uid="uid://cx85vjwjwhrhm" path="res://Assets/BoardBG.png" id="2_10vug"]
 [ext_resource type="Texture2D" uid="uid://bra7tknuiumxe" path="res://Assets/Draw-N.png" id="3_fx0ao"]
 [ext_resource type="Texture2D" uid="uid://b7nxs2ec487vg" path="res://Assets/Draw-P.png" id="4_10vug"]
+[ext_resource type="Texture2D" uid="uid://dk643gp1psr4y" path="res://Assets/Back-N.png" id="4_km0w0"]
+[ext_resource type="Texture2D" uid="uid://brhdhbokn4yq6" path="res://Assets/Back-P.png" id="5_kvmcw"]
 [ext_resource type="Texture2D" uid="uid://gm4bp5ewcnx2" path="res://Assets/Draw-H.png" id="5_tbawi"]
 [ext_resource type="Texture2D" uid="uid://byji6u4yogqi5" path="res://Assets/Stay-N.png" id="6_gwd6f"]
+[ext_resource type="Texture2D" uid="uid://dhnq1y6rx8i2r" path="res://Assets/Back-H.png" id="6_qn4gg"]
 [ext_resource type="Texture2D" uid="uid://boxlxhg4ju6oe" path="res://Assets/Stay-P.png" id="7_km0w0"]
 [ext_resource type="Texture2D" uid="uid://bi1jn3qfgqsn2" path="res://Assets/Stay-H.png" id="8_kvmcw"]
 [ext_resource type="Texture2D" uid="uid://w207okehuhgk" path="res://Assets/Flip-N.png" id="9_qn4gg"]
@@ -30,6 +33,17 @@ expand_mode = 1
 position = Vector2(156, 323)
 scale = Vector2(0.066, 0.066)
 texture = ExtResource("1_ml4tp")
+
+[node name="BackButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 5.0
+offset_right = 6019.0
+offset_bottom = 3380.0
+scale = Vector2(0.016, 0.016)
+texture_normal = ExtResource("4_km0w0")
+texture_pressed = ExtResource("5_kvmcw")
+texture_hover = ExtResource("6_qn4gg")
 
 [node name="DrawButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -187,6 +201,7 @@ vertical_alignment = 1
 [node name="AIController" type="Node" parent="AIPlayer"]
 
 [connection signal="ready" from="." to="." method="_ready"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="DrawButton" to="." method="_on_draw_pressed"]
 [connection signal="pressed" from="StayButton" to="." method="_on_stay_pressed"]
 [connection signal="pressed" from="FlipButton" to="." method="_on_flip_pressed"]

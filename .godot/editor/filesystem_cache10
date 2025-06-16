@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1750037157
+::res://::1750048983
 icon.svg::CompressedTexture2D/CompressedTexture2D::2765094835560085484::1749119954::1749119973::1::::<><><>0<>0<>5effb4b34b0f844f4dd100a9c6d4ec51<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile/TextFile::-1::1749149214::0::1::::<><><>0<>0<><>::
 ::res://Assets/::1750031149
@@ -30,12 +30,12 @@ Play-P.png::CompressedTexture2D/CompressedTexture2D::6632886282136174915::175003
 Settings-H.png::CompressedTexture2D/CompressedTexture2D::2141143791675133037::1750031109::1750031149::1::::<><><>0<>0<>e984f72ca7de421e3a5cde9a17b98ecd<>res://.godot/imported/Settings-H.png-a062b857dcee48e6c4a1b897cbbddc60.ctex::
 Settings.png::CompressedTexture2D/CompressedTexture2D::2886363098671448295::1749996571::1750031149::1::::<><><>0<>0<>997a82dfe2e458a70d5f121c20072f6b<>res://.godot/imported/Settings.png-b22f139da62173be50aef314b6a9e91b.ctex::
 Table.png::CompressedTexture2D/CompressedTexture2D::19122629619263361::1749996571::1750031149::1::::<><><>0<>0<>f2f55a9b892b1221450b67ad5290c809<>res://.godot/imported/Table.png-310c2b9eac024b26463eb2f776aeb85f.ctex::
-::res://Scenes/::1750037155
-Board.gd::GDScript/GDScript::8856215849022499034::1750036846::0::1::::<>Control<><>0<>0<><>::
-Board.tscn::PackedScene/PackedScene::3171585013139579030::1750036911::0::1::::<><><>0<>0<><>::uid://dygat01raui47::::res://Scenes/Board.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png
-ButtonManager.gd::GDScript/GDScript::7727611974463473332::1750031197::0::1::::<>Control<><>0<>0<><>::
+::res://Scenes/::1750041916
+Board.gd::GDScript::8856215849022499034::1750041651::0::1::::<>Control<><>0<>0<><>::
+Board.tscn::PackedScene::3171585013139579030::1750041916::0::1::::<><><>0<>0<><>::uid://dygat01raui47::::res://Scenes/Board.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png
+Button_Manager.gd::GDScript::7727611974463473332::1750031197::0::1::::<>Control<><>0<>0<><>::
 Card.gd::GDScript/GDScript::172085886193737224::1749147153::0::1::::<>Control<><>0<>0<><>::
 Card.tscn::PackedScene/PackedScene::866729740138005448::1750003811::0::1::::<><><>0<>0<><>::uid://cpmh2gqhql01::::res://Scenes/Card.gd<>uid://drj2uuyug6acs::::res://Assets/Back.png
-Main_Menu.gd::GDScript::4110087839458672082::1750037095::0::1::::<>Node2D<><>0<>0<><>::
-Main_Menu.tscn::PackedScene::3465285727008163421::1750037187::0::1::::<><><>0<>0<><>::uid://bys7sto2rnc07::::res://Scenes/Main_Menu.gd<>uid://clbf6s5sdq2ug::::res://Assets/Bg.png<>uid://didkv1cp42exo::::res://Scenes/ButtonManager.gd<>uid://cc3e5gcxsl7d4::::res://Assets/Play-N.png<>uid://c1rawygxbp6od::::res://Assets/Play-P.png<>uid://bj31mfnkf3uae::::res://Assets/Play-H.png<>uid://ddw16smrlwyd0::::res://Assets/Learn-N.png<>uid://dl172wnm3dx2n::::res://Assets/Learn-P.png<>uid://bwcm2ibfvxuiy::::res://Assets/Learn-H.png<>uid://bhef8jgh2cb3l::::res://Assets/Settings.png<>uid://5rglcgpvl84h::::res://Assets/Settings-H.png
+Main_Menu.gd::GDScript/GDScript::4110087839458672082::1750037095::0::1::::<>Node2D<><>0<>0<><>::
+Main_Menu.tscn::PackedScene::3465285727008163421::1750037215::0::1::::<><><>0<>0<><>::uid://bys7sto2rnc07::::res://Scenes/Main_Menu.gd<>uid://clbf6s5sdq2ug::::res://Assets/Bg.png<>uid://didkv1cp42exo::::res://Scenes/Button_Manager.gd<>uid://cc3e5gcxsl7d4::::res://Assets/Play-N.png<>uid://c1rawygxbp6od::::res://Assets/Play-P.png<>uid://bj31mfnkf3uae::::res://Assets/Play-H.png<>uid://ddw16smrlwyd0::::res://Assets/Learn-N.png<>uid://dl172wnm3dx2n::::res://Assets/Learn-P.png<>uid://bwcm2ibfvxuiy::::res://Assets/Learn-H.png<>uid://bhef8jgh2cb3l::::res://Assets/Settings.png<>uid://5rglcgpvl84h::::res://Assets/Settings-H.png
 ::res://Scripts/::1749139116

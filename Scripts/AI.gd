@@ -19,7 +19,7 @@ func make_decision(ai_state: Dictionary, human_state: Dictionary, deck: Array) -
 	
 	return action
 
-# Minimax algorithm implementation
+# Minimax Algorithm
 func minimax(ai_state: Dictionary, human_state: Dictionary, deck: Array, depth: int, maximizing_player: bool) -> Array:
 	if depth == 0 or game_over(ai_state, human_state):
 		return [evaluate_state(ai_state, human_state), ai_state["action"]]

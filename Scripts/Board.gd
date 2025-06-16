@@ -407,7 +407,7 @@ func _calculate_ai_final_round_score():
 	ai_bonus_score = current_ai_bonus # Store this round's bonus
 	if not ai_busted_this_round:
 		ai_total_score += ai_total_flipped_value + ai_bonus_score
-	ai_total_score_label.text = "AI Total Score: %d" % ai_total_score
+	ai_total_score_label.text = "Total Score: %d" % ai_total_score
 
 func _check_ai_win() -> bool:
 	if ai_total_score >= 150:

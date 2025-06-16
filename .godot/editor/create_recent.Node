@@ -1,3 +1,4 @@
+Node
 Node2D
 Label
 TextureButton
@@ -5,7 +6,6 @@ TextureRect
 Button
 Control
 OpenXRCompositionLayerEquirect
-Node
 Sprite2D
 HBoxContainer
 Container
